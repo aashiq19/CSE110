@@ -1,3 +1,45 @@
+1st problem########################################################################################
+
+st="Ami Aashiq ok? fine"
+sum=0
+for i in st:
+    if i==" ":
+        sum+=1
+sum+=1
+print(sum)
+
+2nd problem (Upper level of 1st problem)########################################################################################
+
+st="Ami Aashiq ok?     fine"
+sum=0
+for i in range(0,len(st)):
+    if st[i]==" " and st[i-1]!=" ":
+        sum+=1
+sum+=1
+print(sum)
+
+3rd problem (Counting vowels)########################################################################################
+
+st="Ami Aashiq ok? fine"
+vow=0
+for i in st:
+    if i=='A' or i=='E' or i=='I' or i=='O' or i=='U' or i=='a' or i=='e' or i=='i' or i=='o' or i=='u':
+        vow+=1
+print(vow)
+
+
+4th problem (validateing a stirng) ########################################################################################
+
+st="This_is_shimanto"
+flg=True
+for i in st:
+    if ( not(ord(i)>=65 and ord(i)<=90) and not(ord(i)>=97 and ord(i)<=122)) and i!="_":
+        print("Invalid string")
+        flg=True
+if flg==True:
+    print("It's ok valid string")
+
+5th problem (Password validator!)########################################################################################
 st="this_is_Shimanto@@%#3"
 cap=sml=num=has=at=False
 for i in st:
