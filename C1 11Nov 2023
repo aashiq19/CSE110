@@ -1,5 +1,6 @@
 1st problem########################################################################################
 
+
 st="Ami Aashiq ok? fine"
 sum=0
 for i in st:
@@ -9,6 +10,7 @@ sum+=1
 print(sum)
 
 2nd problem (Upper level of 1st problem)########################################################################################
+
 
 st="Ami Aashiq ok?     fine"
 sum=0
@@ -20,6 +22,7 @@ print(sum)
 
 3rd problem (Counting vowels)########################################################################################
 
+
 st="Ami Aashiq ok? fine"
 vow=0
 for i in st:
@@ -29,6 +32,7 @@ print(vow)
 
 
 4th problem (validateing a stirng) ########################################################################################
+
 
 st="This_is_shimanto"
 flg=True
@@ -40,6 +44,8 @@ if flg==True:
     print("It's ok valid string")
 
 5th problem (Password validator!)########################################################################################
+
+
 st="this_is_Shimanto@@%#3"
 cap=sml=num=has=at=False
 for i in st:
