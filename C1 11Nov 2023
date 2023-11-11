@@ -1,0 +1,18 @@
+st="this_is_Shimanto@@%#3"
+cap=sml=num=has=at=False
+for i in st:
+    if ord(i)>=65 and ord(i)<=90:
+        cap=True
+    elif ord(i)>=97 and ord(i)<=122:
+        sml=True
+    elif ord(i)>=47 and ord(i)<=48:
+        num=True
+    elif i=='#':
+        has=True
+    elif i=='@':
+        at=True
+
+if cap==True and sml==True and num==True and has==True and at==True:
+    print('Valid passowrd')
+else:
+    print("Invalid passowrd, give again!")
