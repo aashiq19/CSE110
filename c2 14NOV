@@ -1,0 +1,61 @@
+###################################################################palindrome
+
+st="madama"
+flg=True
+for i in range(0,len(st)//2):
+    if st[i]!=st[len(st)-1-i]:
+        print("Not palindorme")
+        flg=False
+        break
+if flg==True:
+    print("pallindorme")
+
+
+################################################################### counting alplhabets
+
+
+st1="BRACU CSE"
+st="BRACU EEE"
+
+lst=[]
+for i in range(0,26):
+    lst.append(0)
+# print(lst)
+
+
+for i in st:
+    if ord(i)>=97 and ord(i)<=122:
+        lst[ord(i)-97]+=1
+
+# print(lst)
+for i in range(26):
+    print(f"{chr(i+97)} ={lst[i]}")
+
+
+################################################################### checking anagram
+
+
+st1="medically"
+st2="decimal"
+#creating list with zero
+lst=[]
+for i in range(0,26):
+    lst.append(0)
+# print(lst)
+#for first string
+for i in st1:
+    if ord(i)>=97 and ord(i)<=122:
+        lst[ord(i)-97]+=1
+#for second string
+for i in st2:
+    if ord(i)>=97 and ord(i)<=122:
+        lst[ord(i)-97]-=1
+# checking
+flg=True
+for i in lst:
+    if i!=0:
+        print("Not an anagram")
+        flg=False
+        break
+if flg==True:
+    print("is an Anagram")
