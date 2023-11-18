@@ -1,0 +1,65 @@
+##########################################################################summer-23 mid lab
+st="This is Abtahi 2023 abcdxyz"
+
+for i in st:
+    if ord(i)>=65 and ord(i)<=90:
+        order=ord(i)-64
+        order=order+order
+        if(order>26):
+            order-=26
+        order+=64
+        order+=32
+        print(chr(order),end="")
+    elif ord(i)>=97 and ord(i)<=122:
+        order=ord(i)-96
+        order=order+order
+        if(order>26):
+            order-=26
+        order+=96
+        order-=32
+        print(chr(order),end="")
+    else:
+        print(i,end="")
+
+st="This is Abtahi 2023 abcdxyz"
+
+for i in st:
+    if ord(i)>=65 and ord(i)<=90:
+        order=ord(i)-64
+        order=order+order
+        if(order>26):
+            order-=26
+        order+=64
+        order+=32
+        print(chr(order),end="")
+    elif ord(i)>=97 and ord(i)<=122:
+        order=ord(i)-96
+        order=order+order
+        if(order>26):
+            order-=26
+        order+=96
+        order-=32
+        print(chr(order),end="")
+    else:
+        print(i,end="")
+
+########################################################################## smallest element of list/array
+lst=[5,9,7,2,96,7,36,85,2,6,2,4,63,45]
+
+
+sml=lst[0]
+
+for i in lst:
+    if sml>i:
+        sml=i
+print(sml)
+
+########################################################################## selection sort
+lst=[5,9,7,2,96,7,36,85,2,6,2,4,63,45]
+for i in range(0,len(lst)-1):
+    for j in range(i+1,len(lst)):
+        if lst[i]>lst[j]:
+            tmp=lst[i]
+            lst[i]=lst[j]
+            lst[j]=tmp
+print(lst)
