@@ -1,0 +1,35 @@
+############################################ fib till a limit
+def fibonacci(n):
+    t1=0
+    t2=1
+    print(t1,end=" ")
+    print(t2,end=" ")
+    while True:
+        nxtTerm=t1+t2
+        if nxtTerm>n:
+            break
+        print(nxtTerm,end=" ")
+        t1=t2
+        t2=nxtTerm
+fibonacci(10)
+print()
+fibonacci(5)
+
+
+
+############################################ FOO MOO & BOO
+def foo_moo(num):
+    if num%2==0 and num%3==0:
+        return "FooMoo"
+    elif num%2==0: 
+        return "Foo"
+    elif num%3==0:
+        return "Moo"
+    else:
+        return "Boo"
+
+print(foo_moo(3))
+print(foo_moo(2))
+print(foo_moo(6))
+print(foo_moo(7))
+
