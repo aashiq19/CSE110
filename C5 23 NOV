@@ -1,0 +1,92 @@
+#===============================TASK 4 ===============================
+def function_name(str):
+    up=0
+    low=0
+    for i in str:
+        if ord(i)>=65 and ord(i)<=90:
+            up+=1
+        elif ord(i)>=97 and ord(i)<=122:
+            low+=1
+    print(f"No. of upcase characters : {up}")
+    print(f"No. of lowcase Characters: {low}")
+function_name('The quick Sand Man')
+function_name('HaRRy PotteR')
+
+
+
+#===============================TASK 5 ===============================
+def calculate_tax(age, salary, designation):
+    designation=designation.lower()
+    if age<18 or designation=="president" or salary<10000:
+        return 0
+    elif salary>10000 and salary<20000:
+        return salary* 0.05
+    # else:
+    return salary* 0.1
+
+print(calculate_tax(16, 20000, 'Student'))
+print(calculate_tax(20, 18000, 'assistant manager'))
+print(calculate_tax(20, 22000, 'Assistant manager'))
+print(calculate_tax(20, 122000, 'president'))
+
+
+
+#===============================TASK 6 ===============================
+def function_name(days):
+    yr=days//365
+    # days=days%365
+    days%=365
+    mo=days//30
+    # days=days%30
+    days%=30
+    print(f"{yr} years, {mo} months and {days} days")
+days=int(input("Enter your days : "))
+function_name(days)
+
+
+#===============================TASK 7 ===============================
+def show_palindrome(num):
+    st=""
+    for i in range(1,num+1):
+        st+=str(i)
+    for i in range(num-1,0,-1):
+        st+=str(i)
+    print(st)
+show_palindrome(5)
+show_palindrome(3)
+
+#===============================TASK 8 ===============================
+# def show_palindrome(num):
+#     st=""
+#     for i in range(1,num+1):
+#         st+=str(i)
+#         st+=" "
+#     for i in range(num-1,0,-1):
+#         st+=str(i)
+#         st+=" "
+#     print(st)
+
+# def show_palindromic_triangle(num):
+#     cnt=2*num-2
+#     for i in range(1,num+1):
+#         print(cnt*" ",end="")
+#         show_palindrome(i)
+#         cnt-=2
+# show_palindromic_triangle(4)
+# show_palindromic_triangle(5)
+
+
+#===============================TASK 9 ===============================
+import math
+def area_circumference_generator(radius):
+    area=math.pi * radius*radius
+    circum=2 * math.pi * radius
+    return area,circum
+    # has an issue on que resolve that, but code works perfectly
+tmp=area_circumference_generator(1)
+print(tmp)
+a,b=tmp
+print(f"Area of the circle is {a} and circumference is {b}")
+
+
+
