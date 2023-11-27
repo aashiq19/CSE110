@@ -1,0 +1,67 @@
+# #===============================TASK 11 ===============================
+# def rem_duplicate(tup):
+#     lst=[]
+#     for i in tup:
+#         if i not in lst:
+#             lst.append(i)
+#     return tuple(lst)
+
+# print(rem_duplicate((1,1,1,2,3,4,5,6,6,6,6,4,0,0,0)))
+
+# print(rem_duplicate(("Hi", 1, 2, 3, 3, "Hi",'a', 'a', [1,2])))
+
+
+
+
+
+
+# ===============================TASK 12 ===============================
+def function_name(tup):
+    # print(tup)
+    lst=[]
+    for i in tup:
+        if lst.count(i)<2:
+            lst.append(i)
+    print(f"Removed: {len(tup)-len(lst)}")
+    return lst
+print(function_name([1, 2, 3, 3, 3, 3, 4, 5, 8, 8]))
+print(function_name([10, 10, 15, 15, 20]))
+
+
+
+# ===============================TASK 13 ===============================
+
+
+def calc(opt,num1,num2):
+    if opt=="+":
+        r= num1+num2
+    elif opt=="-":
+        r= num1-num2
+    elif opt=="*":
+        r= num1*num2
+    elif opt=="/":
+        r= num1/num2
+    return r
+
+ot=input()
+n1=float(input())
+n2=float(input())
+print(calc(ot,n1,n2))
+
+# ===============================TASK 14 ===============================
+
+def function_name(st, idx):
+
+    for i in range(0,len(st)):
+        if i%idx!=0 or i==0:
+            print(st[i],end="")
+    print(st[idx::idx])
+
+function_name("I love programming.", 3)
+
+
+
+
+
+
+
