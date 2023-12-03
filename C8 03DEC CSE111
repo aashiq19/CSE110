@@ -1,0 +1,168 @@
+####################TASK 05 ####################
+st="""ohMyBRC5U"""
+up=low=digit=special=1
+for j in st:
+    if ord(j)>=65 and ord(j)<=90:
+        up=0
+    elif ord(j)>=97 and ord(j)<=122:
+        low=0
+    elif ord(j)>=48 and ord(j)<=57:
+        digit=0
+    elif ord(j)==95 or ord(j)==36 or ord(j)==35 or ord(j)==64:
+        special=0
+rply=""
+if low:
+    rply+="Lowercase character Missing"
+if up:
+    if rply:
+        rply+=", "
+    rply+="Uppercase character Missing"
+if digit:
+    if rply:
+        rply+=", "
+    rply+="Digit missing"
+if special:
+    if rply:
+        rply+=", "
+    rply+="Special character missing"
+if rply=="":
+    print("OK")
+else:
+    print(rply)
+
+
+
+
+
+
+####################TASK 06 ####################
+lst=[]
+while True:
+    user=input("Enter your input :")
+    if user=="STOP":
+        break
+    else:
+        lst.append(int(user))
+new=[]
+for i in lst:
+    if i not in new:
+        new.append(i)
+for i in new:
+    freq=0
+    for j in lst:
+        if i==j:
+            freq+=1
+    print(f"{i} - {freq} times")
+
+
+
+
+
+####################TASK 12 ####################
+dic={}
+while True:
+    user=input("Enter your input :")
+    if user=="STOP":
+        break
+    else:
+        if int(user) not in dic:
+            dic[int(user)]=1
+        else:
+            dic[int(user)]+=1
+
+for i in dic:
+    print(f"{i} - {dic[i]} times")
+
+
+
+####################TASK 07 ####################
+def spliter(st):
+    lst=[]
+    tmp=""
+    for i in st:
+        if i!=" ":
+            tmp+=i
+        else:
+            lst.append(int(tmp))
+            tmp=""
+    lst.append(int(tmp))
+    return lst
+
+n=int(input("Enter your N : "))
+n=n-1
+lst=[]
+user=input("Enter your input : ")
+lst=spliter(user)
+mx_sum=lst[0]+lst[1]+lst[2]
+for i in range(1,n+1):
+    user=input("Enter your input : ")
+    tmp=spliter(user)
+    sum=tmp[0]+tmp[1]+tmp[2]
+    if mx_sum<sum:
+        lst=tmp
+        mx_sum=sum
+    # n-=1
+print(mx_sum)
+print(lst)
+
+
+
+
+
+
+####################TASK 08 ####################
+lst1=input("input ")
+lst2=input("input ")
+
+lst1=lst1.split(" ")
+lst1=[int(i) for i in lst1]
+lst2=lst2.split(" ")
+lst2=[int(i) for i in lst2]
+new=[]
+
+for i in lst1:
+    for j in lst2:
+        new.append(i*j)
+
+print(new)
+
+
+
+###################TASK 11 ####################
+new={}
+lst=[]
+for i in range(2):
+    user=input("enter input")
+    # a: 300, b: 200, d: 400, e: 200
+    nst=user.split(", ")
+    # nst=["a: 300", "b: 200"," d: 400", "e: 200"]
+    for j in nst:
+        # j="a: 300"
+        key,val=j.split(": ")
+        val=int(val)
+        if key not in new:
+            new[key]=val
+        else:
+            new[key]+=val
+
+print(new)
+print(f"Values: {tuple(new)}")
+
+
+
+
+####################TASK 13 ####################
+st="key1 : value1, key2 : value2, key3 : value1"
+st=st.split(", ")
+new={}
+for i in st:
+    tmp=i.split(" : ")
+    # key1 : value1
+    if tmp[1] not in new:
+        tmp_lst=[]
+        tmp_lst.append(tmp[0])
+        new[tmp[1]]=tmp_lst
+    else:
+        new[tmp[1]].append(tmp[0])
+print(new)
+
