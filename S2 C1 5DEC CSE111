@@ -1,0 +1,149 @@
+####################TASK 10 ####################
+d1=input("input")
+d2=input("input")
+
+t1=d1.split(" ")
+d1=[]
+for i in t1:
+    d1.append(int(i))
+t1=d2.split(" ")
+
+d2=[]
+for i in t1:
+    d2.append(int(i))
+
+
+
+member=0
+for i in d2:
+
+    if d1[1]+i<=5:
+        member+=1
+print(member//3)
+
+
+####################TASK 09 ####################
+def spliter(st):
+    lst=[]
+    tmp=""
+    for i in st:
+        if i!=" ":
+            tmp+=i
+        else:
+            lst.append(int(tmp))
+            tmp=""
+    lst.append(int(tmp))
+    return lst
+
+
+while True:
+    data=input()
+    if data=="STOP":
+        break
+    lst=spliter(data)
+    set_Lst=[]
+    for i in range(1,len(lst)-1):
+        set_Lst.append(i)
+
+    check=[]
+    for i in range(0,len(lst)-1):
+        ub=True
+        dif=lst[i]-lst[i+1]
+        if dif<0:
+            dif=(-1)*dif
+        check.append(dif)
+        if dif>len(lst)-1:
+            ub=False
+            break
+    for i in set_Lst:
+        if i not in check:
+            ub=False
+    if ub :
+        print("UB Jumper")
+    else:
+        print("Not UB Jumper")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+####################TASK 07 ####################
+def spliter(st):
+    lst=[]
+    tmp=""
+    for i in st:
+        if i!=" ":
+            tmp+=i
+        else:
+            lst.append(int(tmp))
+            tmp=""
+    lst.append(int(tmp))
+    return lst
+
+n=int(input("Enter your N : "))
+n=n-1
+lst=[]
+user=input("Enter your input : ")
+lst=spliter(user)
+mx_sum=lst[0]+lst[1]+lst[2]
+for i in range(1,n+1):
+    user=input("Enter your input : ")
+    tmp=spliter(user)
+    sum=tmp[0]+tmp[1]+tmp[2]
+    if mx_sum<sum:
+        lst=tmp
+        mx_sum=sum
+print(mx_sum)
+print(lst)
+
+########################### Using dict
+dic={}
+while True:
+    user=input()
+    if user=="STOP":
+        break
+    user=int(user)
+    if user not in dic:
+        dic[user]=1
+    else:
+        dic[user]+=1
+
+for i in dic:
+    print(f"{i} - {dic[i]} times")
+
+
+
+input_lst=[]
+while True:
+    user=input()
+    if user=="STOP":
+        break
+    user=int(user)
+    input_lst.append(user)
+
+check=[]
+
+for i in input_lst:
+    if i not in check:
+        count=0
+        for j in input_lst:
+            if i==j:
+                count+=1
+        print(f"{i} - {count} times")
+        check.append(i)
