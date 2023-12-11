@@ -1,0 +1,141 @@
+####################################################### task 1
+class MangoTree:
+    def __init__(self,n):
+        self.variety=n
+        self.height=1
+        self.number_of_mangoes=0
+    def growthUpdate(self,yr):
+        self.height+=(yr*3)
+        if self.variety =="Gopalbhog":
+            self.number_of_mangoes=self.height*10
+        else:
+            self.number_of_mangoes=self.height*15
+        print(f"Variety: {self.variety}")
+        print(f"Height: {self.height} meter(s)")
+        print(f"Number of mangoes on the tree: {self.number_of_mangoes}")
+
+
+
+
+
+
+mangoTree1= MangoTree("Gopalbhog")
+# Display the details of the mango tree
+print("=====================================")
+print("Mango Tree Details:")
+print(f"Variety: {mangoTree1.variety}")
+print(f"Height: {mangoTree1.height} meter(s)")
+print(f"Number of mangoes on the tree: {mangoTree1.number_of_mangoes}")
+print("=====================================")
+mangoTree2= MangoTree("Amrapali")
+# Display the details of the mango tree
+print("Mango Tree Details:")
+print(f"Variety: {mangoTree2.variety}")
+print(f"Height: {mangoTree2.height} meter(s)")
+print(f"Number of mangoes on the tree: {mangoTree2.number_of_mangoes}")
+print("=====================================")
+
+
+
+
+
+
+####################################################### task 2
+
+print("Updated details after 5 years:")
+mangoTree1= MangoTree("Gopalbhog")
+print("=====================================")
+mangoTree1.growthUpdate(5)
+print("=====================================")
+mangoTree2= MangoTree("Amrapali")
+mangoTree2.growthUpdate(5)
+print("=====================================")
+
+
+
+####################################################### task 3
+class Customer:
+    def __init__(self):
+        print("Welcome to ABC Memorial Park")
+        self.tick=0
+        self.tk=0
+    def buyTicket(self,n,a):
+        if self.tick<3:
+            if a>10:
+                self.tk+=100
+            else:
+                self.tk+=50
+            self.tick+=1
+            print(f"Successfully purchased a ticket for {n}!")
+        else:
+            print("You can't buy more than 3 tickets")
+    def showDetails(self):
+        print(f"Amount of tickets: {self.tick} \nTotal price: {self.tk} Taka")
+
+
+
+print('1-------------------------')
+customer1 = Customer()
+print('2-------------------------')
+customer1.buyTicket('Bob', 23)
+customer1.buyTicket('Henry', 7)
+customer1.buyTicket('Alexa', 30)
+customer1.buyTicket('Jonas', 43)
+print('3-------------------------')
+customer1.showDetails()
+print('4-------------------------')
+customer2 = Customer()
+print('5-------------------------')
+customer2.buyTicket('Harry', 60)
+customer2.buyTicket('Tomas', 28)
+print('6-------------------------')
+customer2.showDetails()
+
+
+
+####################################################### task 4
+class GreenPhone:
+    def __init__(self,s,v,c):
+        self.ser=s
+        self.ver=v
+        self.cam=c
+
+        if self.ser[0]=="A":
+            self.mx_up=self.ver+2
+        elif self.ser[0]=="M":
+            self.mx_up=self.ver+3
+        elif self.ser[0]=="U":
+            self.mx_up=self.ver+4
+
+    def showSpecification(self):
+        print(f"Phone Company: GreenPhone\nModel Name: {self.ser} \nAndroid Version: {self.ver}\nNumber of Cameras: {self.cam}")
+    def updatePhone(self):
+        if self.ver==self.mx_up:
+            print(f"Your phone Greenphone {self.ser} is already up to date.")
+        else:
+            self.ver+=1
+            print(f"Your phone Greenphone {self.ser} is upgraded to Android Version: {self.ver}.")
+
+print('1=======================')
+p1 = GreenPhone('A1', 12, 3)
+p2 = GreenPhone('M11', 12, 4)
+p3 = GreenPhone('U20', 12, 5)
+p1.showSpecification()
+print('2=======================')
+p2.showSpecification()
+print('3=======================')
+p1.updatePhone()
+print('4=======================')
+p1.updatePhone()
+p2.updatePhone()
+p3.updatePhone()
+print('5=======================')
+p1.updatePhone()
+p2.updatePhone()
+p3.updatePhone()
+print('6=======================')
+p2.updatePhone()
+p3.updatePhone()
+print('7=======================')
+p1.showSpecification()
+p3.showSpecification()
