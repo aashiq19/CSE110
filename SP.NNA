@@ -1,0 +1,72 @@
+
+class Student:
+    def __init__(self,n,i,c):
+        self.name=n
+        self.__id=i
+        self.__cgpa=c
+
+    def setId(self,i):
+        self.__id=i
+    def getId(self):
+        return self.__id
+    def setCGPA(self,c):
+        self.__cgpa=c
+    def getCGPA(self):
+        return self.__cgpa
+    
+class Department:
+    def __init__(self,n):
+        self.name=n
+        self.lstAdrs=[]
+    
+    def findStudent(self,i):
+        flg=True
+        for adrs in self.lstAdrs:
+            if adrs.getId()==i:
+                print(f"Student info:\nStudent Name: {adrs.name}\nID: {i}\nCGPA:  {adrs.getCGPA()}")
+                flg=False
+                break
+        if flg:
+            print("Student with this ID doesn't exist, Please give a valid ID")
+
+    def addStudent(self,*args):
+        for adrs in args:
+            flg=True
+            for adrsInDatabase in self.lstAdrs:
+                if adrs.getId()==adrsInDatabase.getId():
+                    print("Student with the same ID already exists, Please try with another ID")
+                    flg=False
+                    break
+            if flg:
+                print(f"Welcome to CSE department, {adrs.name}")
+                self.lstAdrs.append(adrs)
+    def details(self):
+        print(f"Department Name: {self.name}\nNumber of student:{len(self.lstAdrs)}")
+        for adrs in self.lstAdrs:
+            print(f"Student name: {adrs.name}, ID: {adrs.getId()}, cgpa: {adrs.getCGPA()}")
+
+s1 = Student("Akib", 22301010, 3.29)
+s2 = Student("Reza", 22101010, 3.45)
+s3 = Student("Ruhan", 23101934, 4.00)
+print("1==================================")
+cse = Department("CSE")
+cse.findStudent(22112233)
+print("2==================================")
+cse.addStudent(s1,s2,s3)
+print("3==================================")
+cse.details()
+print("4==================================")
+cse.findStudent(22301010)
+print("5==================================")
+s4 = Student("Nakib",22301010,3.22)
+cse.addStudent(s4)
+print("6==================================")
+s4.setId(21201220)
+cse.addStudent(s4)
+print("7==================================")
+cse.details()
+print("8==================================")
+s5 = Student("Sakib",22201010,2.29)
+cse.addStudent(s5)
+print("9==================================")
+cse.details()
