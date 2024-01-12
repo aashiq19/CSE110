@@ -4,9 +4,9 @@ int main (){
     long long int a,b,c;
     scanf("%lld%lld",&a,&b);
     if(a>b){
-        printf("%lld",a-b);
+        printf("\n%lld",a-b);
     }else{
-        printf("%lld",b-a);
+        printf("\n%lld",b-a);
     }
     return 0;
 }
